@@ -18,7 +18,7 @@ export default (
   case types.REMOVE:
     return {
       ...state,
-      info: [...state.info.filter(data => data.id !== payload.id)]
+      info: [...state.info.filter(data => data.id !== payload)]
     };
   case types.UPDATE:
     return {

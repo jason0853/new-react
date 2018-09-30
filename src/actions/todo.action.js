@@ -1,15 +1,15 @@
 // @flow
 import * as types from 'types/todo.type';
 
-type InfoPayload = {
-  id: ?number,
+export type InfoPayload = {
+  id?: number | string,
   name: string,
   age: number
 };
 
-type CreateAction = $Call<typeof create, InfoPayload>;
-type RemoveAction = $Call<typeof remove, number>;
-type UpdateAction = $Call<typeof update, InfoPayload>;
+export type CreateAction = $Call<typeof create, InfoPayload>;
+export type RemoveAction = $Call<typeof remove, string>;
+export type UpdateAction = $Call<typeof update, InfoPayload>;
 
 export type TodoAction = CreateAction | RemoveAction | UpdateAction;
 
@@ -20,7 +20,7 @@ export function create(payload: InfoPayload): CreateAction {
   };
 }
 
-export function remove(payload: number): RemoveAction {
+export function remove(payload: string): RemoveAction {
   return {
     type: types.REMOVE,
     payload

@@ -5,12 +5,13 @@ import { Form, Input, Button } from './styled';
 type Props = {
   +name: string,
   +age: string,
-  onChange(e: SyntheticInputEvent<HTMLInputElement>): void
+  onChange(e: any): void,
+  onCreate(e: any): void
 };
 
-const TodoForm = ({ name, age, onChange }: Props) => {
+const TodoForm = ({ name, age, onChange, onCreate }: Props) => {
   return (
-    <Form>
+    <Form onSubmit={onCreate}>
       <Input
         name="name"
         value={name}

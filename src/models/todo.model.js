@@ -1,6 +1,6 @@
 // @flow
 export type InfoItem = {
-  +id: number,
+  +id: number | string,
   +name: string,
   +age: number
 };
